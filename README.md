@@ -1,7 +1,7 @@
 # The Dark Dungeon
 Authors: [Isean Bhanot](https://github.com/IseanB), [Shaike Mukul](https://github.com/ShaikeMukul), [Eden Fraczkiewicz](https://github.com/edenfraczkiewicz), [Marissa Valencia](https://github.com/mvalencia4578)
 ## Project Description:
-We are making a text-based RPG where you are an adventurer delving into a dungeon to find treasure. This RPG will let you pick between 3 unique classes, fight enemies, use items, and solve puzzles (maybe). We’re using C++ to develop this project. This is interesting to me because some of the earliest computer games were text-based RPGs and it would be cool to find out how they are actually made.
+We are making a text-based RPG where you are UCR student fighting your way up the bell tower and defeating various mascots/famous figures in UCR. This RPG will let you pick between 3 colleges, CNAS, CHASS, and BCOE, each of which have different strengths and weaknesses, fight familiar enemies, and use various items like health potions. It will have 5 levels with a prize being guarded by the final boss at the top. We’re using C++ to develop this project. This is interesting to us because some of the earliest computer games were text-based RPGs and it would be cool to find out how they are actually made.
 
 ### Langauges/Tools/Technologies:
 * `Valgrind` - an instrumentation framework for building dynamic analysis tools (assists in finding and checking memory leaks).
