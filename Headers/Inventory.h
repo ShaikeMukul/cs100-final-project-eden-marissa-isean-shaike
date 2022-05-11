@@ -13,6 +13,7 @@ class Inventory{
         void removeItem(Items item);
     public:
         std::string printItems();
+        int getSize();
 };
 
 #endif
