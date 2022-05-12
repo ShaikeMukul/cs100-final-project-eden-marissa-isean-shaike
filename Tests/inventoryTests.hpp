@@ -22,9 +22,12 @@ TEST(InventorySuite, addMultipleItems){
 }
 
 /*
-EXPECT_EQ(test1.getSize(), 1);
-EXPECT_EQ(test1.at(0).getDamageEffect(), 0);
-EXPECT_EQ(test1.at(0).getHealthEffect(), 25.32);
-EXPECT_EQ(test1.at(0).getItemDescription(), "Heals the player by a certain amount");
-EXPECT_EQ(test1.at(0).getItemName(),"Health Potion");
+TEST(InventorySuite, verifyGet){
+    Inventory test1;
+    test1.addItem(Items("Health Potion", "Heals the player by a certain amount", 25.32, 0));
+    EXPECT_EQ(test1.at(0).getDamageEffect(), 0);
+    EXPECT_EQ(test1.at(0).getHealthEffect(), 25.32);
+    EXPECT_EQ(test1.at(0).getItemDescription(), "Heals the player by a certain amount");
+    EXPECT_EQ(test1.at(0).getItemName(),"Health Potion");
+}
 */

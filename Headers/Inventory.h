@@ -13,7 +13,7 @@ class Inventory{
         void removeItem(std::string);
         std::string printItems();
         int getSize() { return (itemList.size());}
-        int getItem(std::string);
+        Items getItem(std::string);
 };
 
 #endif
