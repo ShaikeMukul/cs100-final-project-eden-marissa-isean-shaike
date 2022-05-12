@@ -9,9 +9,9 @@ class Inventory{
         vector<Items> itemList;
         int numItems;
     protected:
+        Inventory();
         void addItem(Items item);
-        void removeItem(Items item);
-    public:
+        void removeItem(std::string itemName);
         std::string printItems();
         int getSize();
 };
