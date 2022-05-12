@@ -21,7 +21,7 @@ TEST(InventorySuite, addMultipleItems){
     EXPECT_EQ(test1.getSize(), 10);
 }
 
-TEST(InventorySuite, verifyGetOneSizedInventory){
+TEST(InventorySuite, verifyGetSizeOneSizedInventory){
     Inventory test1;
     test1.addItem(Items("Consumable", "Health Potion", "Heals the player by a certain amount", 25.32, 0));
     EXPECT_EQ(test1.getItem("Health Potion").getDamageEffect(), 0);
@@ -30,7 +30,7 @@ TEST(InventorySuite, verifyGetOneSizedInventory){
     EXPECT_EQ(test1.getItem("Health Potion").getItemName(),"Health Potion");
 }
 
-TEST(InventorySuite, verifyGetLargeSizedInventory){
+TEST(InventorySuite, verifyGetSizeLargeSizedInventory){
     Inventory test1;
     test1.addItem(Items("Consumable", "Health Potion", "Heals", 25.32, 0));
     test1.addItem(Items("Consumable", "Damage Potion", "Damage", -123, 213));
@@ -98,6 +98,42 @@ TEST(InventorySuite, RemovingZeroItem){
 
     ASSERT_EQ(test1.getItem("No Potion").getItemName(), "No Potion");
     ASSERT_EQ(test1.getSize(), 7);
+}
+
+TEST(InventorySuite, GetSizeZero){
+    Inventory test1;
+
+    ASSERT_EQ(test1.getSize(), 0);
+}
+
+TEST(InventorySuite, GetSizeNotZero){
+    Inventory test1;
+    test1.addItem(Items("Consumable", "Health Potion", "Heals", 25.32, 0));
+    test1.addItem(Items("Consumable", "Damage Potion", "Damage", -123, 213));
+    test1.addItem(Items("Consumable", "Potion Potion", "Potion", 0, 0));
+    test1.addItem(Items("Consumable", "Pop Potion", "Potion", 123.12, 0));
+    test1.addItem(Items("Consumable", "Lol Potion", "asdsad", 546.45, 123));
+    test1.addItem(Items("Consumable", "No Potion", "11323", 12, -123.123));
+    test1.addItem(Items("Consumable", "Zero Potion", "vdsa", 654, .4565));
+    ASSERT_EQ(test1.getSize(), 7);
+}
+
+TEST(InventorySuite, GetSizewithRemove){
+    Inventory test1;
+    test1.addItem(Items("Consumable", "Health Potion", "Heals", 25.32, 0));
+    test1.addItem(Items("Consumable", "Damage Potion", "Damage", -123, 213));
+    test1.addItem(Items("Consumable", "Potion Potion", "Potion", 0, 0));
+    test1.addItem(Items("Consumable", "Pop Potion", "Potion", 123.12, 0));
+    test1.addItem(Items("Consumable", "Lol Potion", "asdsad", 546.45, 123));
+    test1.addItem(Items("Consumable", "No Potion", "11323", 12, -123.123));
+    test1.addItem(Items("Consumable", "Zero Potion", "vdsa", 654, .4565));
+
+    test1.removeItem("Deep Potion");
+    test1.removeItem("Zero Potion");
+    test1.removeItem("Potion");
+    test1.removeItem("Damage Potion");
+
+    ASSERT_EQ(test1.getSize(), 5);
 }
 
 TEST(InventorySuite, PrintEmptyInventory){
