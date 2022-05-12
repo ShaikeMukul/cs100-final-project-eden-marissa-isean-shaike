@@ -5,14 +5,11 @@ SET(CMAKE_CXX_STANDARD 11)
 ADD_SUBDIRECTORY(googletest)
 
 ADD_EXECUTABLE(mains
-	Implementations/Items.cpp
-	Implementations/Inventory.cpp
 	main.cpp
 )
 
 ADD_EXECUTABLE(test
-	Implementations/Inventory.cpp
-	Implementations/Items.cpp
+
 	Tests/unit_test.cpp
 )
 
