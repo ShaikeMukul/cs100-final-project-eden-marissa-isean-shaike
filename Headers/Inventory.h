@@ -9,10 +9,11 @@ class Inventory{
         std::vector<Items> itemList;
         int numItems;
     public:
-        void addItem(Items item);
-        void removeItem(std::string itemName);
+        void addItem(Items);
+        void removeItem(std::string);
         std::string printItems();
         int getSize() { return (itemList.size());}
+        int getItem(std::string);
 };
 
 #endif

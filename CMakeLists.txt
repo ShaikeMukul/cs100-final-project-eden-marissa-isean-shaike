@@ -6,10 +6,12 @@ ADD_SUBDIRECTORY(googletest)
 
 ADD_EXECUTABLE(mains
 	Implementations/Items.cpp
+	Implementations/Inventory.cpp
 	main.cpp
 )
 
 ADD_EXECUTABLE(test
+	Implementations/Inventory.cpp
 	Tests/unit_test.cpp
 )
 

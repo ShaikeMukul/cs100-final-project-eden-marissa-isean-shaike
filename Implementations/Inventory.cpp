@@ -1,4 +1,4 @@
-#include "Inventory.h"
+#include "../Headers/Inventory.h"
 /*void addItem(Items item);
         void removeItem(std::string itemName);
     public:
