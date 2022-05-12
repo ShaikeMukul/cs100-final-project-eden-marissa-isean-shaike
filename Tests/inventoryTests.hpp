@@ -79,6 +79,7 @@ TEST(InventorySuite, RemovingMultipleItem){
     
     ASSERT_EQ(test1.getItem("No Potion").getItemName(), "No Potion");
     ASSERT_EQ(test1.getItem("Health Potion").getItemName(), "Health Potion");
+    ASSERT_EQ(test1.getItem("Zero Potion").getItemName(), "Zero Potion");
     ASSERT_EQ(test1.getSize(), 3);
 }
 

@@ -3,6 +3,7 @@
 
 #include "Items.h"
 #include <vector>
+#include <sstream>
 
 class Inventory{
     private:

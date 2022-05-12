@@ -10,6 +10,7 @@ Items Inventory::getItem(std::string itemName){
             return item;
         }
     }
+    return Items();
 }
 
 void Inventory::removeItem(std::string itemName){
@@ -19,11 +20,7 @@ void Inventory::removeItem(std::string itemName){
             itemList.erase(itemList.begin() + count);
             return;
         }
+        ++count;
     }
 }
 
-std::string Inventory::printItems(){
-    for(Items item : itemList){
-        
-    }
-}
