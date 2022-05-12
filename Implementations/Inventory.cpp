@@ -27,12 +27,12 @@ void Inventory::removeItem(std::string itemName){
 std::string Inventory::printItems(){
     std::ostringstream output;
     int counter = 1;
-    output << "Inventory\n";
+    output << "\n\t\tInventory\n";
     output << "----------------------------------------\n\n";
 
-    output << "\t Consumables\n";
+    output << "Consumables\n";
     for(Items item : itemList){
-        if(item.getTag() == "Consumables"){
+        if(item.getTag() == "Consumable"){
             output << '\t';
             output << counter << ". ";
             output << item.getItemName() << " : " << item.getItemDescription() << "\n";
@@ -41,7 +41,7 @@ std::string Inventory::printItems(){
     }
     output << "\n";
     counter = 1;
-    output << "\t Debuffs\n";
+    output << "Debuffs\n";
     for(Items item : itemList){
         if(item.getTag() == "Debuff"){
             output << '\t';
@@ -53,7 +53,7 @@ std::string Inventory::printItems(){
 
     output << "\n";
     counter = 1;
-    output << "\t Buffs\n";
+    output << "Buffs\n";
     for(Items item : itemList){
         if(item.getTag() == "Buff"){
             output << '\t';
@@ -63,5 +63,6 @@ std::string Inventory::printItems(){
         }
     }
     output << "\n";
+    output << "----------------------------------------\n";
     return output.str();
 }

@@ -99,3 +99,66 @@ TEST(InventorySuite, RemovingZeroItem){
     ASSERT_EQ(test1.getItem("No Potion").getItemName(), "No Potion");
     ASSERT_EQ(test1.getSize(), 7);
 }
+
+TEST(InventorySuite, PrintEmptyInventory){
+    Inventory test1;
+    std::ostringstream output;
+    int counter = 1;
+    output << "\n\t\tInventory\n";
+    output << "----------------------------------------\n\n";
+
+    output << "Consumables\n";
+    
+    output << "\n";
+    output << "Debuffs\n";
+
+    output << "\n";
+    output << "Buffs\n";
+    output << "\n";
+    output << "----------------------------------------\n";
+    EXPECT_EQ(test1.printItems(), output.str());
+}
+
+TEST(InventorySuite, PrintOneItemInventory){
+    Inventory test1;
+    test1.addItem(Items("Consumable", "Health Potion", "Heals", 25.32, 0));
+    std::ostringstream output;
+    int counter = 1;
+    output << "\n\t\tInventory\n";
+    output << "----------------------------------------\n\n";
+
+    output << "Consumables\n";
+    output << "\t1. Health Potion : Heals\n";
+    output << "\n";
+    output << "Debuffs\n";
+
+    output << "\n";
+    output << "Buffs\n";
+    output << "\n";
+    output << "----------------------------------------\n";
+    EXPECT_EQ(test1.printItems(), output.str());
+}
+
+TEST(InventorySuite, PrintMultipleItemInventory){
+    Inventory test1;
+    test1.addItem(Items("Consumable", "Health Potion", "Heals", 25.32, 0));
+    test1.addItem(Items("Consumable", "Sheild Potion", "Sheilds", 25.32, 0));
+    test1.addItem(Items("Debuff", "Negative Charm", "vdsa", 654, .4565));
+    test1.addItem(Items("Buff", "Health Charm", "Heals you", 25.32, 0));
+    std::ostringstream output;
+    int counter = 1;
+    output << "\n\t\tInventory\n";
+    output << "----------------------------------------\n\n";
+    output << "Consumables\n";
+    output << "\t1. Health Potion : Heals\n";
+    output << "\t2. Sheild Potion : Sheilds\n";
+    output << "\n";
+    output << "Debuffs\n";
+    output << "\t1. Negative Charm : vdsa\n";
+    output << "\n";
+    output << "Buffs\n";
+    output << "\t1. Health Charm : Heals you\n";
+    output << "\n";
+    output << "----------------------------------------\n";
+    EXPECT_EQ(test1.printItems(), output.str());
+}
