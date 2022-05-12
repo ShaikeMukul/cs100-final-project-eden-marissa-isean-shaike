@@ -3,7 +3,7 @@
 #include "../Headers/Items.h"
 
 TEST(ItemSuite, Constructor){
-    Item apple();
+    Items apple;
     EXPECT_EQ(apple.getDamageEffect(), 0);
     EXPECT_EQ(apple.getHealthEffect(), 0);
     EXPECT_EQ(apple.getItemDescription(), "description");
