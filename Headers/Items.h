@@ -7,6 +7,7 @@ enum tags{
     Consumable,
     Buff,
     Debuff,
+    None
 };
 
 class Items{
@@ -17,8 +18,8 @@ class Items{
         std::string itemDescription;
         tags itemTag;
     public:
-        Items(std::string name, std::string description, double healthAffect, double damageAffect) : healthEffect(healthAffect), damageEffect(damageAffect), itemName(name), itemDescription(description){}
-        Items() : healthEffect(0), damageEffect(0), itemName("name"), itemDescription("description") {}
+        Items(std::string tagName, std::string name, std::string description, double healthAffect, double damageAffect);
+        Items() : itemTag(None), healthEffect(0), damageEffect(0), itemName("name"), itemDescription("description") {}
         std::string getItemDescription(){ return (itemDescription);}
         std::string getItemName(){ return (itemName);}
         double getHealthEffect(){ return (healthEffect);}

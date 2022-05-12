@@ -23,5 +23,7 @@ void Inventory::removeItem(std::string itemName){
 }
 
 std::string Inventory::printItems(){
-    
+    for(Items item : itemList){
+        
+    }
 }

@@ -12,6 +12,7 @@ ADD_EXECUTABLE(mains
 
 ADD_EXECUTABLE(test
 	Implementations/Inventory.cpp
+	Implementations/Items.cpp
 	Tests/unit_test.cpp
 )
 
