@@ -2,7 +2,7 @@
 
 #include "../Headers/Inventory.h"
 
-TEST(InventorySuite, AddItem){
+TEST(InventorySuite, addZeroItems){
     Inventory test1;
-    test1.addItem()
+    EXPECT_EQ(test1.getSize(), 0);
 }

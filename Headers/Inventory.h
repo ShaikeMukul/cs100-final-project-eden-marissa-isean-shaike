@@ -6,14 +6,13 @@
 
 class Inventory{
     private:
-        vector<Items> itemList;
+        std::vector<Items> itemList;
         int numItems;
-    protected:
-        Inventory();
+    public:
         void addItem(Items item);
         void removeItem(std::string itemName);
         std::string printItems();
-        int getSize();
+        int getSize() { return (itemList.size());}
 };
 
 #endif
