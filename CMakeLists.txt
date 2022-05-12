@@ -9,7 +9,7 @@ ADD_EXECUTABLE(mains
 )
 
 ADD_EXECUTABLE(test
-
+	Implementations/Entities.cpp
 	Tests/unit_test.cpp
 )
 
