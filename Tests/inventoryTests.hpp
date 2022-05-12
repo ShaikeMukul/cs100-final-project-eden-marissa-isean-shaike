@@ -48,6 +48,7 @@ TEST(InventorySuite, verifyGetLargeSizedInventory){
 }
 
 TEST(InventorySuite, RemovingOneItem){
+    Inventory test1;
     test1.addItem(Items("Health Potion", "Heals", 25.32, 0));
     test1.addItem(Items("Damage Potion", "Damage", -123, 213));
     test1.addItem(Items("Potion Potion", "Potion", 0, 0));
@@ -62,6 +63,7 @@ TEST(InventorySuite, RemovingOneItem){
 }
 
 TEST(InventorySuite, RemovingMultipleItem){
+    Inventory test1;
     test1.addItem(Items("Health Potion", "Heals", 25.32, 0));
     test1.addItem(Items("Damage Potion", "Damage", -123, 213));
     test1.addItem(Items("Potion Potion", "Potion", 0, 0));
@@ -74,11 +76,14 @@ TEST(InventorySuite, RemovingMultipleItem){
     test1.removeItem("Damage Potion");
     test1.removeItem("Potion Potion");
     test1.removeItem("Lol Potion");
-
+    
+    ASSERT_EQ(test1.getItem("No Potion").getItemName(), "No Potion");
+    ASSERT_EQ(test1.getItem("Health Potion").getItemName(), "Health Potion");
     ASSERT_EQ(test1.getSize(), 3);
 }
 
 TEST(InventorySuite, RemovingZeroItem){
+    Inventory test1;
     test1.addItem(Items("Health Potion", "Heals", 25.32, 0));
     test1.addItem(Items("Damage Potion", "Damage", -123, 213));
     test1.addItem(Items("Potion Potion", "Potion", 0, 0));
@@ -90,5 +95,6 @@ TEST(InventorySuite, RemovingZeroItem){
     test1.removeItem("Potion");
     test1.removeItem("Deep Potion");
 
+    ASSERT_EQ(test1.getItem("No Potion").getItemName(), "No Potion");
     ASSERT_EQ(test1.getSize(), 7);
 }

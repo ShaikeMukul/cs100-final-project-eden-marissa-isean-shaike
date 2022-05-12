@@ -1,9 +1,5 @@
 #include "../Headers/Inventory.h"
-/*void addItem(Items item);
-        void removeItem(std::string itemName);
-    public:
-        std::string printItems();
-        int getSize();*/
+
 void Inventory::addItem(Items item){
     itemList.push_back(item);
 }
@@ -14,4 +10,18 @@ Items Inventory::getItem(std::string itemName){
             return item;
         }
     }
+}
+
+void Inventory::removeItem(std::string itemName){
+    int count = 0;
+    for(Items item : itemList){
+        if(item.getItemName() == itemName){
+            itemList.erase(itemList.begin() + count);
+            return;
+        }
+    }
+}
+
+std::string Inventory::printItems(){
+    
 }
