@@ -60,3 +60,21 @@ TEST(InventorySuite, RemovingOneItem){
 
     ASSERT_EQ(test1.getSize(), 6);
 }
+
+TEST(InventorySuite, RemovingMultipleItem){
+    test1.addItem(Items("Health Potion", "Heals", 25.32, 0));
+    test1.addItem(Items("Damage Potion", "Damage", -123, 213));
+    test1.addItem(Items("Potion Potion", "Potion", 0, 0));
+    test1.addItem(Items("Pop Potion", "Potion", 123.12, 0));
+    test1.addItem(Items("Lol Potion", "asdsad", 546.45, 123));
+    test1.addItem(Items("No Potion", "11323", 12, -123.123));
+    test1.addItem(Items("Zero Potion", "vdsa", 654, .4565));
+
+    test1.removeItem("Pop Potion");
+    test1.removeItem("Damage Potion");
+    test1.removeItem("Potion Potion");
+    test1.removeItem("Lol Potion");
+
+    ASSERT_EQ(test1.getSize(), 3);
+}
+
