@@ -4,11 +4,14 @@
 
 class Entities{
     protected:
-        int health = 0;
-        int damage = 0;
-        std::string name = 0;
-        virtual int getHealth() = 0;
-        virtual int getDamage() = 0;
+        double health;
+        double damage;
+        std::string name;
+        std::string description;
+
+        virtual double getHealth(){return health;}
+        virtual double getDamage(){return damage;}
+        virtual std::string getDescription(){return description;}
         virtual std::string getName() = 0;
 };
 

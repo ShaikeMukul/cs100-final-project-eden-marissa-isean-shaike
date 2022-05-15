@@ -5,11 +5,14 @@ SET(CMAKE_CXX_STANDARD 11)
 ADD_SUBDIRECTORY(googletest)
 
 ADD_EXECUTABLE(mains
+	Implementations/Entities.cpp
+	Implementations/RegularMob.cpp
 	main.cpp
 )
 
 ADD_EXECUTABLE(test
 	Implementations/Entities.cpp
+	Implementations/RegularMob.cpp
 	Tests/unit_test.cpp
 )
 
