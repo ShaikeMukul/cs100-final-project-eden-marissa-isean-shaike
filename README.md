@@ -16,7 +16,7 @@ We are making a text-based RPG where you are UCR student fighting your way up th
 
 ## Class Diagram
 
- ![ClassUML drawio (1)](https://user-images.githubusercontent.com/44033533/166180746-d3f7eba0-81d4-4605-bccd-69f2234bb965.png)
+![ClassUML drawio (3)](https://user-images.githubusercontent.com/44033533/168518725-48622ee7-22b5-4257-bab1-c96568caa989.png)
 
 There is a overlapping Entities super class that helps catgories the Players and Enemies under one class. There are also three types of players that the user can choose from: CNAS, BCOE, and CHASS. These will dictate different strengths and healths. A player object will also store Items in and Inventory, in order to be used later on in the game. There are two types of enemies a player can face: BossMob and RegularMob. The BossMob needs a bit more strategy to beat while the RegularMobs are common enemies the player will face. Finally, the Dungeon class will hold the player and enemey and interact with the two as they fight. The UserInput and UserOutput class will allow the user to interact with the Enemies and their Player.
 
