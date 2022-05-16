@@ -21,8 +21,8 @@ RegularMob::RegularMob(){
 }
 
 RegularMob::RegularMob(std::string nameInput, std::string descriptionInput, double healthInput, double damageInput) {
-    name = nameInput;
-    description = descriptionInput;
-    damage = damageInput;
-    health = healthInput;
+    name = (nameInput);
+    description = (descriptionInput);
+    damage = abs(damageInput);
+    health = abs(healthInput);
 }
