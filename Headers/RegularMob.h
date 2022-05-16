@@ -3,6 +3,7 @@
 
 #include "Entities.h"
 
+
 class RegularMob : public Entities{
     public:
         RegularMob();

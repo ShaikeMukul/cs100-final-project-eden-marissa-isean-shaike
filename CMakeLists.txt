@@ -13,6 +13,7 @@ ADD_EXECUTABLE(mains
 ADD_EXECUTABLE(test
 	Implementations/Entities.cpp
 	Implementations/RegularMob.cpp
+	Implementations/BossMob.cpp
 	Tests/unit_test.cpp
 )
 
