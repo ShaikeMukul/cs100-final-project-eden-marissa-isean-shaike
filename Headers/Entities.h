@@ -8,7 +8,7 @@ class Entities{
         double damage;
         std::string name;
         std::string description;
-
+    public:
         virtual double getHealth(){return health;}
         virtual double getDamage(){return damage;}
         virtual std::string getDescription(){return description;}
