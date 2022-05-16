@@ -1,13 +1,13 @@
 #include "../Headers/BossMob.h"
 
-void BossMob::changeDamage(double lessenDamage){
+void BossMob::changeBossDamage(double lessenDamage){
     damage = damage - lessenDamage;
     if(damage < 0){
         damage = 0;
     }
 }
 
-void BossMob::changeHealth(double damageReceived){
+void BossMob::changeBossHealth(double damageReceived){
     health = health - damageReceived;
     if(health < 0){
         health = 0;
@@ -28,5 +28,7 @@ BossMob::BossMob(std::string nameInput, std::string descriptionInput, double hea
 }
 
 void BossMob::setActions(Actions inputActions[10]){
-    currActions = inputActions;
+    for(unsigned i = 0; i < 10; ++i){
+        currActions[i] = inputActions[i];
+    }
 }
