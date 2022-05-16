@@ -6,10 +6,16 @@ class TestOtherClass : public BossMob{
     public:
         TestOtherClass(std::string nameInput, std::string descriptionInput, double healthInput, double damageInput) : BossMob(nameInput, descriptionInput, healthInput, damageInput) {}
         void changeBossHealth(double amount){
-            changeBossHealth(amount);
+            changeHealth(amount);
         }
         void changeBossDamage(double amount){
-            changeBossDamage(amount);
+            changeDamage(amount);
+        }
+        void setBossActions(Actions inputActions[]){
+            setActions(inputActions);
+        }
+        Actions getAction(int i){
+            return currActions[i];
         }
 };
 
@@ -79,4 +85,19 @@ TEST(BossMob, changeNegativeDamage){
     test.changeBossDamage(100.0000001);
 
     EXPECT_EQ(test.getDamage(), 0);
+}
+
+TEST(BossMob, actionsSet){
+    TestOtherClass test("Orge", "Lives under bridges", 1000, 20);
+    Actions testAct[10];
+    for(int i = 0; i < 10; ++i){
+        testAct[i] = Actions();
+        testAct[i].healthEffect = i;
+    }
+
+    test.setBossActions(testAct);
+
+    for(int j = 9; j >= 0; --j){
+        EXPECT_EQ(test.getAction(j).healthEffect, j);
+    }
 }

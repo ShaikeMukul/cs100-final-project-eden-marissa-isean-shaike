@@ -1,13 +1,13 @@
 #include "../Headers/BossMob.h"
 
-void BossMob::changeBossDamage(double lessenDamage){
+void BossMob::changeDamage(double lessenDamage){
     damage = damage - lessenDamage;
     if(damage < 0){
         damage = 0;
     }
 }
 
-void BossMob::changeBossHealth(double damageReceived){
+void BossMob::changeHealth(double damageReceived){
     health = health - damageReceived;
     if(health < 0){
         health = 0;

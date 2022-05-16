@@ -5,9 +5,10 @@
 //Stub implementation
 class Actions{
     public:
-        int healthEffect = -1;
-        int damageEffect = -2;
-        std::string actionDescrip = "No Desc";
+        int healthEffect;
+        int damageEffect;
+        std::string actionDescrip;
+        Actions() : healthEffect(-1), damageEffect(-2), actionDescrip("No Desc") {}
 };
 //END OF STUB
 
@@ -19,8 +20,8 @@ class BossMob : public Entities{
     protected:
         Actions currActions[10];
 
-        void changeBossHealth(double);
-        void changeBossDamage(double);
+        void changeHealth(double);
+        void changeDamage(double);
         void setActions(Actions inputActions[]);
 
 };
