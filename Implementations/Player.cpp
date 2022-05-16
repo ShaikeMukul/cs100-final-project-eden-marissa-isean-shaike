@@ -46,4 +46,19 @@ void Player::changeDamage(){
 bool Player::levelUp(){
 
 }
+void Player::setCollege() {
+    std::cout << "Choose Your College: "<<std::endl;
+    for(int i=0;i<className.size();i++){
+        std::cout << "[" <<i <<"] "<<className[i] << std::endl;
+    }
+    int choice;
+
+    std::cout<< "Enter your choice: ";
+    std::cin>> choice;
+
+    std::cout << "Your College is: "<< className[choice]<<std::endl;
+
+    std::cout << "Description for " << className[choice] << ":" <<std::endl;
+    std::cout << description[choice]<<std::endl;
+}
 
