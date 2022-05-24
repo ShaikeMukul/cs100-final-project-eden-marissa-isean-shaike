@@ -16,25 +16,13 @@ We are making a text-based RPG where you are UCR student fighting your way up th
 
 ## Class Diagram
 
-![ClassUML drawio (2)](https://user-images.githubusercontent.com/44033533/167730122-9b21515c-c0b3-4c4a-8913-6162b4250970.png)
+
+![ClassUML drawio (3)](https://user-images.githubusercontent.com/44033533/168518725-48622ee7-22b5-4257-bab1-c96568caa989.png)
 
 There is a overlapping Entities super class that helps catgories the Players and Enemies under one class. There are also three types of players that the user can choose from: CNAS, BCOE, and CHASS. These will dictate different strengths and healths. A player object will also store Items in and Inventory, in order to be used later on in the game. There are two types of enemies a player can face: BossMob and RegularMob. The BossMob needs a bit more strategy to beat while the RegularMobs are common enemies the player will face. Finally, the Dungeon class will hold the player and enemey and interact with the two as they fight. The UserInput and UserOutput class will allow the user to interact with the Enemies and their Player.
 
- > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
- > * Before the meeting you should perform a sprint plan like you did in Phase II.
- > * You should also update this README file by adding the following:
- >   * What design pattern(s) did you use? For each pattern you must explain in 4-5 sentences:
- >     * Why did you pick this pattern? And what feature did you implement with it?
- >     * How did the design pattern help you write better code?
- >   * An updated class diagram that reflects the design pattern(s) you used. You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description).
- >   * Make sure your README file (and Project board) are up-to-date reflecting the current status of your project. Previous versions of the README file should still be visible through your commit history.
-> 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+## Design Pattern: Strategy
+We decided to use the strategy design pattern in order to vary the types of similar actions that our BossMob and Player can do. Both the BossMob and Player are going to have similar Actions; for example dodging, attacking, and using an item; however, since the boss is meant to be more powerful than the player, it will therefore have a slightly altered implementation. For example, the general implementation of a dodge Actions, class name, will mostly be the same for a BossMob and Player with the BossMob having a slightly less effective, able to be hit easier, dodge. The use of the strategy design pattern helped eliminate writing numerous paragraphs and algorithms for two similar classes.
 
  
  > ## Final deliverable
