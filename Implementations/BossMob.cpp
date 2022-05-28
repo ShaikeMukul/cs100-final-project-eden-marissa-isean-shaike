@@ -39,3 +39,21 @@ Actions BossMob::getAction(int index){
     if(index < 0){return currActions[0];}
     return currActions[index];
 }
+
+void BossMob::setHealth(int level){
+    int usedLevel;
+    if(level < 0) usedLevel = 0;
+    else if (level > 5) usedLevel = 5;
+    else userLevel = level;
+
+    health = (static_cast<double>{usedLevel}/5)*140 + 100;
+}
+
+void BossMob::setDamage(int level){
+    int usedLevel;
+    if(level < 0) usedLevel = 0;
+    else if (level > 5) usedLevel = 5;
+    else userLevel = level;
+
+    health = (static_cast<double>{usedLevel}/5)*60 + 30;
+}

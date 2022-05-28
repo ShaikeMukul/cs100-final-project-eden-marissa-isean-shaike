@@ -24,6 +24,7 @@ class BossMob : public Entities{
         void changeDamage(double); // decrease damage by amount passed in
         void setActions(Actions inputActions[]);
         Actions getAction(int);
-
+        void setHealth(int);
+        void setDamage(int);
 };
 #endif
