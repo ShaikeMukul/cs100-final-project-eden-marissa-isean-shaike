@@ -12,5 +12,7 @@ class RegularMob : public Entities{
     protected:
         void changeHealth(double);
         void changeDamage(double);
+        void setHealth(int);
+        void setDamage(int);
 };
 #endif

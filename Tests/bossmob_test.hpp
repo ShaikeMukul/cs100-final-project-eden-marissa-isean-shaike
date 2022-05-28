@@ -17,6 +17,12 @@ class TestOtherClass : public BossMob{
         Actions getActionTest(int i){
             return getAction(i);
         }
+        void setBossHealth(int level){
+            setHealth(level);
+        }
+        void setBossDamage(int level){
+            setDamage(level);
+        }
 };
 
 TEST(BossMob, DefaultConstructor){
@@ -174,4 +180,69 @@ TEST(BossMob, getActionsOverBound){
      TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
 
     EXPECT_EQ(test.getActionTest(110).healthEffect, 118);
+}
+
+TEST(BossMob, setHealthRegularLevel){
+    Actions testAct[10];
+    for(int i = 0; i < 10; ++i){
+        testAct[i] = Actions();
+        testAct[i].healthEffect = i*2 + 100;
+    }
+    TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
+
+    test.setBossHealth(3);
+
+    EXPECT_EQ(test.getHealth(), 184);
+}
+
+TEST(BossMob, setHealthUnderflowLevel){
+    Actions testAct[10];
+    for(int i = 0; i < 10; ++i){
+        testAct[i] = Actions();
+        testAct[i].healthEffect = i*2 + 100;
+    }
+    TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
+
+    test.setBossHealth(-10);
+
+    EXPECT_EQ(test.getHealth(), 128);
+}
+
+TEST(BossMob, setDamageUnderflowLevel){
+    Actions testAct[10];
+    for(int i = 0; i < 10; ++i){
+        testAct[i] = Actions();
+        testAct[i].healthEffect = i*2 + 100;
+    }
+    TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
+
+    test.setBossDamage(-1);
+
+    EXPECT_EQ(test.getDamage(), 36);
+}
+
+TEST(BossMob, setHealthOverflowevel){
+    Actions testAct[10];
+    for(int i = 0; i < 10; ++i){
+        testAct[i] = Actions();
+        testAct[i].healthEffect = i*2 + 100;
+    }
+    TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
+
+    test.setBossHealth(10);
+
+    EXPECT_EQ(test.getHealth(), 240);
+}
+
+TEST(BossMob, setDamageOverflowLevel){
+    Actions testAct[10];
+    for(int i = 0; i < 10; ++i){
+        testAct[i] = Actions();
+        testAct[i].healthEffect = i*2 + 100;
+    }
+    TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
+
+    test.setBossDamage(123);
+
+    EXPECT_EQ(test.getDamage(), 60);
 }
