@@ -5,32 +5,28 @@
 #include "Player.h"
 #include "BossMob.h"
 #include "RegularMob.h"
-#include <string>
 
 using namespace std;
 
 class Actions : public Entities {
   public:
-    /*using Entities& wouldnt work cause we need enemy and player 
-    objects to adjust the respective damage and health, but if i do that then 
-    it wouldnt be a strategy pattern anymore?*/
-    virtual void lightAttack(Entities&) = 0;
-    virtual void heavyAttack(Entities&) = 0;
+    virtual void lightAttack() = 0;
+    virtual void heavyAttack() = 0;
     virtual ~Actions();
 };
 
 class EnemyActions : public Actions {
   public:
-    virtual void lightAttack(Entities&);
-    virtual void heavyAttack(Entities&);
+    virtual void lightAttack();
+    virtual void heavyAttack();
 };
 
 class PlayerActions : public Actions {
   public:
-    virtual void lightAttack(Entities&);
-    virtual void heavyAttack(Entities&);
-    void dodgeAction(Entities&);
-    void healingAction(Entities&);
+    virtual void lightAttack();
+    virtual void heavyAttack();
+    void dodgeAction();
+    void healingAction(Player&, Player);
 };
 
 #endif
