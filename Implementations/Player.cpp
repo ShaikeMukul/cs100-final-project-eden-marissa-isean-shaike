@@ -15,6 +15,7 @@ std::string Player::setName(std::string name){
 }
 
 std::string Player::getName() {
+    return name;
 }
 
 void Player::changeHealth(){
