@@ -18,10 +18,18 @@ std::string Player::getName() {
     return name;
 }
 
-void Player::changeHealth(){
+void Player::changeHealth(double damageReceived){
+    health = health - damageReceived;
+    if(health < 0){
+        health = 0;
+    }
 }
 
-void Player::changeDamage(){
+void Player::changeDamage(double lessenDamage){
+   damage = damage - lessenDamage;
+     if(damage < 0){
+        damage = 0;
+    }
 }
 
 bool Player::levelUp(){
