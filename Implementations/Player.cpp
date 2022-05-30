@@ -33,6 +33,8 @@ void Player::changeDamage(double lessenDamage){
 }
 
 bool Player::levelUp(){
-
+    ++level;
+    setHealth(level);
+    setDamage(level);
 }
 
