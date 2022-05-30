@@ -246,3 +246,15 @@ TEST(BossMob, setDamageOverflowLevel){
 
     EXPECT_EQ(test.getDamage(), 60);
 }
+
+TEST(BossMob, getTag){
+    Actions testAct[10];
+    for(int i = 0; i < 10; ++i){
+        testAct[i] = Actions();
+        testAct[i].healthEffect = i*2 + 100;
+    }
+    TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
+
+
+    EXPECT_EQ(test.getTag(), "Boss");
+}

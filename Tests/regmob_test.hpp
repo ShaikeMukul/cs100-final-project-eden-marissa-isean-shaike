@@ -86,7 +86,7 @@ TEST(RegularMob, changeNegativeDamage){
 
     EXPECT_EQ(test.getDamage(), 0);
 }
-//--------------------------------------------------------
+
 TEST(RegularMob, setHealthRegularLevel){
     TestClass test("Orge", "Lives under bridges", 1000, 20);
 
@@ -125,4 +125,10 @@ TEST(RegularMob, setDamageOverflowLevel){
     test.setMobDamage(123);
 
     EXPECT_EQ(test.getDamage(), 40);
+}
+
+TEST(RegularMob, getTagRegularMob){
+    TestClass test("Orge", "Lives under bridges", 1000, 20);
+
+    EXPECT_EQ(test.getTag(), "RegularMob");
 }
