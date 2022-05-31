@@ -5,14 +5,13 @@
 #include <iostream>
 #include <vector>
 
-
 class Player{
-    private:
+protected:
+	std::vector<Actions> potentActions;
         std::string name;
         int health;
         int level;
         std:: string description;
-        std::vector<Actions> potentActions;
         bool levelUp();
     public:
         Player();
