@@ -6,7 +6,7 @@ Player::Player() {
     this->level = 0;
     this->damage = 0;
     this->health=0;
-    this->description="This player is in the dark dungeon"
+    this->description="This player is in the dark dungeon";
     
 }
 
