@@ -4,6 +4,13 @@ using namespace std;
 
 Actions::~Actions() {}
 
+Actions::Actions() {
+    title = "error: no title";
+    actionDescription = "error: no description";
+    healthOutput = -999.9;
+    damageOutput = -999.9;
+}
+
 Actions::Actions(string name, string description, double health, double damage) {
     title = (name);
     actionDescription = (description);
