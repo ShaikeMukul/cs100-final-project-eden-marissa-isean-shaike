@@ -2,7 +2,6 @@
 #define BOSSMOB_H
 #include "Entities.h"
 
-
 class BossMob : public Entities{
     public:
         BossMob();

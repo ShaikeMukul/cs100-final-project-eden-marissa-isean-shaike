@@ -13,11 +13,15 @@ void BossMob::changeHealth(double damageReceived){
         health = 0;
     }
 }
+
+
 BossMob::BossMob(){
-    health = 0;
-    damage = 0;
-    name = "Undefined Boss Monster";
-    description = "Undefined Boss Monster Description";
+    name = "Error: default constructor";
+    description = "NULL";
+    damage = -1;
+    health = -1;
+    Actions inputActions[10] = {Actions("Error", "Error",-1.2,-2.3),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2)};
+    setActions(inputActions);
 }
 
 BossMob::BossMob(std::string nameInput, std::string descriptionInput, double healthInput, double damageInput, Actions inputActions[10]) {

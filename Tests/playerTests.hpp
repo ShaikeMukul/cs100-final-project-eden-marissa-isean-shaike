@@ -4,7 +4,7 @@
 
 TEST(PlayerTest, DefaultConstructor){
     Player test;
-    EXPECT_EQ(test.getName(),"Player");
+    EXPECT_EQ(test.getName(),"player");
     EXPECT_EQ(test.getLevel(),0);
     EXPECT_EQ(test.getDamage(),0);
     EXPECT_EQ(test.getHealth(),0);
@@ -29,7 +29,7 @@ TEST(PlayerChangeDamage, PositiveNumber){
 
     EXPECT_EQ(test.getDamage(), 50);
     test.changeDamage(50);
-    EXPECT_EQ(test.getDamage(), 50);
+    EXPECT_EQ(test.getDamage(), 0);
 }
 
 // TEST(PlayerLevelUp, PositiveNumber){

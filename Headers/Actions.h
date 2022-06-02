@@ -4,22 +4,21 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 class Actions {
   protected:
     double healthOutput;
     double damageOutput;
-    string actionDescription;
-    string title;
+    std::string actionDescription;
+    std::string title;
 
   public:
-    Actions(string name, string description, double health, double damage);
+    Actions(): title("ErrorName"), actionDescription("ErrorDesc"), healthOutput(-1), damageOutput(-1){}
+    Actions(std::string name, std::string description, double health, double damage);
     ~Actions();
-    string getActionDescription();
+    std::string getActionDescription();
     double getHealthOutput();
     double getDamageOutput();
-    string getTitle();
+    std::string getTitle();
 };
 
 #endif

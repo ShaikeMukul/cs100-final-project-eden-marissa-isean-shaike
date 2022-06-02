@@ -27,18 +27,14 @@ class TestOtherClass : public BossMob{
 
 TEST(BossMob, DefaultConstructor){
     BossMob test;
-    EXPECT_EQ(test.getDamage(), 0);
-    EXPECT_EQ(test.getHealth(), 0);
-    EXPECT_EQ(test.getDescription(), "Undefined Boss Monster Description");
-    EXPECT_EQ(test.getName(), "-+- BOSS -+-    Undefined Boss Monster");
+    EXPECT_EQ(test.getDamage(), -1);
+    EXPECT_EQ(test.getHealth(), -1);
+    EXPECT_EQ(test.getDescription(), "NULL");
+    EXPECT_EQ(test.getName(), "-+- BOSS -+-    Error: default constructor");
 }
 
 TEST(BossMob, ParmConstructor){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*2;
-    }
+    Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2)};
     BossMob test("Orge", "Lives under bridges", 1000, 20, testAct);
     EXPECT_EQ(test.getDamage(), 20);
     EXPECT_EQ(test.getHealth(), 1000);
@@ -47,11 +43,7 @@ TEST(BossMob, ParmConstructor){
 }
 
 TEST(BossMob, ParmEmptyConstructor){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*3;
-    }
+Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2)};
     BossMob test("","",0,0, testAct);
     EXPECT_EQ(test.getDamage(), 0);
     EXPECT_EQ(test.getHealth(), 0);
@@ -60,11 +52,7 @@ TEST(BossMob, ParmEmptyConstructor){
 }
 
 TEST(BossMob, ParmNegativeConstructor){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*3;
-    }
+Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2)};
     BossMob test("Hello","Hi",-102,-122, testAct);
     EXPECT_EQ(test.getDamage(), 122);
     EXPECT_EQ(test.getHealth(), 102);
@@ -73,11 +61,7 @@ TEST(BossMob, ParmNegativeConstructor){
 }
 
 TEST(BossMob, changeHealth){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*3;
-    }
+Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2)};
     TestOtherClass test("Hello","Hi",100,15, testAct);
 
     EXPECT_EQ(test.getHealth(), 100);
@@ -87,11 +71,7 @@ TEST(BossMob, changeHealth){
 }
 
 TEST(BossMob, changeNegativeHealth){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*3;
-    }
+Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2)};
     TestOtherClass test("Hello","Hi",100,15,testAct);
 
     EXPECT_EQ(test.getHealth(), 100);
@@ -101,11 +81,7 @@ TEST(BossMob, changeNegativeHealth){
 }
 
 TEST(BossMob, changeDamage){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*3;
-    }
+Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2)};
     TestOtherClass test("Hello","Hi",100,15,testAct);
 
     EXPECT_EQ(test.getDamage(), 15);
@@ -115,11 +91,7 @@ TEST(BossMob, changeDamage){
 }
 
 TEST(BossMob, changeNegativeDamage){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*3;
-    }
+Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2)};
     TestOtherClass test("Hello","Hi",100,15,testAct);
 
     EXPECT_EQ(test.getDamage(), 15);
@@ -129,65 +101,49 @@ TEST(BossMob, changeNegativeDamage){
 }
 
 TEST(BossMob, actionsSet_and_getAction){
-    Actions overwriteAct[10];
-    for(int i = 0; i < 10; ++i){
-        overwriteAct[i] = Actions();
-        overwriteAct[i].healthEffect = i+123;
-    }
+    Actions overwriteAct[10] = {Actions("TestTitle", "TestDesc", 1, 5)};
     
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i;
-    }
+    Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2)};
     TestOtherClass test("Orge", "Lives under bridges", 1000, 20, overwriteAct);
     test.setBossActions(testAct);// meant to overwrite passed in actions
 
-    for(int j = 9; j >= 0; --j){
-        EXPECT_EQ(test.getActionTest(j).healthEffect, j);
-    }
+
+    EXPECT_EQ(test.getActionTest(0).getDamageOutput(), 2);
 }
 
 TEST(BossMob, getActionsOnce_and_ParmConstructor){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*2;
-    }
+    Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2),Actions("TestTitle", "TestDesc", 13, 12)};
     TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
 
-    EXPECT_EQ(test.getActionTest(5).healthEffect, 10);
+    EXPECT_EQ(test.getActionTest(5).getHealthOutput(), -1);
 }
 
 TEST(BossMob, getActionsUnderBound_and_ParmConstructor){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*2 + 122;
-    }
+    Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2),Actions("TestTitle", "TestDesc", 13, 12)};
 
-     TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
+    TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
 
-    EXPECT_EQ(test.getActionTest(-10).healthEffect, 122);
+    EXPECT_EQ(test.getActionTest(-10).getHealthOutput(), 1);
 }
 
 TEST(BossMob, getActionsOverBound){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*2 + 100;
-    }
+    Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2),
+        Actions("TestTitle", "TestDesc", 13, 12),
+        Actions("TestTitle", "TestDesc", 13, 12),
+        Actions("TestTitle", "TestDesc", 13, 12),
+        Actions("TestTitle", "TestDesc", 13, 12),
+        Actions("TestTitle", "TestDesc", 13, 12),
+        Actions("TestTitle", "TestDesc", 13, 12),
+        Actions("TestTitle", "TestDesc", 13, 12),
+        Actions("TestTitle", "TestDesc", 13, 121),
+        Actions("TestTitle", "TestDesc", 13, 132)};
      TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
 
-    EXPECT_EQ(test.getActionTest(110).healthEffect, 118);
+    EXPECT_EQ(test.getActionTest(110).getDamageOutput(), 132);
 }
 
 TEST(BossMob, setHealthRegularLevel){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*2 + 100;
-    }
+    Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2),Actions("TestTitle", "TestDesc", 13, 12)};
     TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
 
     test.setBossHealth(3);
@@ -196,11 +152,8 @@ TEST(BossMob, setHealthRegularLevel){
 }
 
 TEST(BossMob, setHealthUnderflowLevel){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*2 + 100;
-    }
+    Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2),Actions("TestTitle", "TestDesc", 13, 12)};
+
     TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
 
     test.setBossHealth(-10);
@@ -209,11 +162,8 @@ TEST(BossMob, setHealthUnderflowLevel){
 }
 
 TEST(BossMob, setDamageUnderflowLevel){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*2 + 100;
-    }
+    Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2),Actions("TestTitle", "TestDesc", 13, 12)};
+
     TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
 
     test.setBossDamage(-1);
@@ -222,11 +172,8 @@ TEST(BossMob, setDamageUnderflowLevel){
 }
 
 TEST(BossMob, setHealthOverflowevel){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*2 + 100;
-    }
+    Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2),Actions("TestTitle", "TestDesc", 13, 12)};
+
     TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
 
     test.setBossHealth(10);
@@ -235,11 +182,8 @@ TEST(BossMob, setHealthOverflowevel){
 }
 
 TEST(BossMob, setDamageOverflowLevel){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*2 + 100;
-    }
+    Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2),Actions("TestTitle", "TestDesc", 13, 12)};
+
     TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
 
     test.setBossDamage(123);
@@ -248,11 +192,8 @@ TEST(BossMob, setDamageOverflowLevel){
 }
 
 TEST(BossMob, getTag){
-    Actions testAct[10];
-    for(int i = 0; i < 10; ++i){
-        testAct[i] = Actions();
-        testAct[i].healthEffect = i*2 + 100;
-    }
+    Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2),Actions("TestTitle", "TestDesc", 13, 12)};
+
     TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
 
 
