@@ -5,26 +5,19 @@
 #include "Player.h"
 #include "BossMob.h"
 #include "RegularMob.h"
+#include "Dungeon.h"
 
 using namespace std;
 
-class Actions : public Entities {
+class Actions {
   public:
-    virtual void lightAttack() = 0;
-    virtual void heavyAttack() = 0;
-    virtual ~Actions();
-};
-
-class EnemyActions : public Actions {
-  public:
-    virtual void lightAttack();
-    virtual void heavyAttack();
-};
-
-class PlayerActions : public Actions {
-  public:
-    virtual void lightAttack();
-    virtual void heavyAttack();
+    ~Actions();
+    void pLightAttack();
+    void pHeavyAttack();
+    void rLightAttack();
+    void rHeavyAttack();
+    void bLightAttack();
+    void bHeavyAttack();
     void dodgeAction();
     void healingAction(Player&, Player);
 };
