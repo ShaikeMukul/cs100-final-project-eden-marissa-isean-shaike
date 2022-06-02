@@ -8,12 +8,12 @@ class RegularMob : public Entities{
     public:
         RegularMob();
         RegularMob(std::string nameInput, std::string descriptionInput, double healthInput, double damageInput);
-        std::string getTag(){return "RegularMob";}
-        std::string getName(){ return name;}
+        virtual std::string getTag(){return "RegularMob";}
+        virtual std::string getName(){ return name;}
     protected:
         void changeHealth(double);
         void changeDamage(double);
-        void setHealth(int);
-        void setDamage(int);
+        virtual void setHealth(int);
+        virtual void setDamage(int);
 };
 #endif

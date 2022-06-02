@@ -10,6 +10,14 @@ Player::Player() {
     
 }
 
+Player::Player(std::string nameInput, std::string descriptionInput, double healthInput, double damageInput){
+    name = nameInput;
+    description=descriptionInput;
+    damage=damageInput;
+    health=healthInput;
+    level=0;
+}
+
 std::string Player::setName(std::string name){
     name = name;
 }
@@ -38,7 +46,7 @@ void Player::changeDamage(double lessenDamage){
     }
 }
 
-bool Player::levelUp(){
+void Player::levelUp(){
     ++level;
     setHealth(level);
     setDamage(level);

@@ -11,16 +11,18 @@ class Player : public Entities{
 	    Actions currActions[10];
         void setActions(Actions inputActions[]);
         int level;
-        bool levelUp();
+        void levelUp();
     public:
         Player();
-        std::string setName(std::string name);
-        std::string getName();
+        Player(std::string nameInput, std::string descriptionInput, double healthInput, double damageInput);
+        virtual std::string getTag(){ return "Player";}
+        virtual std::string setName(std::string name);
+        virtual std::string getName();
         void changeHealth(double);
         void changeDamage(double);
         int getLevel(){return level;}
-        void setHealth(int);
-        void setDamage(int);
+        virtual void setHealth(int);
+        virtual void setDamage(int);
 };
 
 
