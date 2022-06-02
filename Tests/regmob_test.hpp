@@ -11,6 +11,12 @@ class TestClass : public RegularMob{
         void changeMobDamage (double amount){
             changeDamage(amount);
         }
+        void setMobDamage(int value){
+            setDamage(value);
+        }
+        void setMobHealth(int value){
+            setHealth(value);
+        }
 };
 
 TEST(RegularMob, DefaultConstructor){
@@ -79,4 +85,50 @@ TEST(RegularMob, changeNegativeDamage){
     test.changeMobDamage(100.0000001);
 
     EXPECT_EQ(test.getDamage(), 0);
+}
+
+TEST(RegularMob, setHealthRegularLevel){
+    TestClass test("Orge", "Lives under bridges", 1000, 20);
+
+    test.setMobHealth(3);
+
+    EXPECT_EQ(test.getHealth(), 102);
+}
+
+TEST(RegularMob, setHealthUnderflowLevel){
+    TestClass test("Orge", "Lives under bridges", 1000, 20);
+
+    test.setMobHealth(-10);
+
+    EXPECT_EQ(test.getHealth(), 74);
+}
+
+TEST(RegularMob, setDamageUnderflowLevel){
+    TestClass test("Orge", "Lives under bridges", 1000, 20);
+
+    test.setMobDamage(-1);
+
+    EXPECT_EQ(test.getDamage(), 16);
+}
+
+TEST(RegularMob, setHealthOverflowevel){
+    TestClass test("Orge", "Lives under bridges", 1000, 20);
+    
+    test.setMobHealth(10);
+
+    EXPECT_EQ(test.getHealth(), 130);
+}
+
+TEST(RegularMob, setDamageOverflowLevel){
+    TestClass test("Orge", "Lives under bridges", 1000, 20);
+
+    test.setMobDamage(123);
+
+    EXPECT_EQ(test.getDamage(), 40);
+}
+
+TEST(RegularMob, getTagRegularMob){
+    TestClass test("Orge", "Lives under bridges", 1000, 20);
+
+    EXPECT_EQ(test.getTag(), "RegularMob");
 }
