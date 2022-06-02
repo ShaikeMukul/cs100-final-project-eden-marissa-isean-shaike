@@ -12,7 +12,7 @@ class Actions {
     std::string title;
 
   public:
-    Actions(): title("ErrorName"), actionDescription("ErrorDesc"), healthOutput(-1), damageOutput(-1){}
+    Actions();
     Actions(std::string name, std::string description, double health, double damage);
     ~Actions();
     std::string getActionDescription();
