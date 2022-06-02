@@ -7,12 +7,10 @@
 #include "Entities.h"
 
 class Player : public Entities{
-protected:
-	std::vector<Actions> potentActions;
-        std::string name;
-        int health;
+    protected:
+	    Actions currActions[10];
+        void setActions(Actions inputActions[]);
         int level;
-        std:: string description;
         bool levelUp();
     public:
         Player();
@@ -20,8 +18,9 @@ protected:
         std::string getName();
         void changeHealth(double);
         void changeDamage(double);
-        double getHealth();
-        double getDamage();
+        int getLevel(){return level;}
+        void setHealth(int);
+        void setDamage(int);
 };
 
 
