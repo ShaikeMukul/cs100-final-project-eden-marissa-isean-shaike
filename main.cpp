@@ -1,16 +1,15 @@
+#include "Headers/Items.h"
+#include "Headers/Inventory.h"
 #include <iostream>
-#include <string>
-#include "Actions.cpp"
-
-using namespace std;
-
-int main() {
-    Actions action("light attack", "POW! you performed a light attack!", -15.0, 15.0);
-
-    cout << "Action title: " << action.getTitle() << endl;
-    cout << "Action description: " << action.getActionDescription() << endl;
-    cout << "Health output: " << action.getHealthOutput() << endl;
-    cout << "Damage output: " << action.getDamageOutput() << endl;
-
+int main(){
+    Inventory test1;
+    test1.addItem(Items("Debuff", "Health Potion", "Heals", 25.32, 0));
+    test1.addItem(Items("Consumable", "Damage Potion", "Damage", -123, 213));
+    test1.addItem(Items("Debuff", "Potion Potion", "Potion", 0, 0));
+    test1.addItem(Items("Consumable", "Pop Potion", "Potion", 123.12, 0));
+    test1.addItem(Items("Consumable", "Lol Potion", "asdsad", 546.45, 123));
+    test1.addItem(Items("Buff", "No Potion", "11323", 12, -123.123));
+    test1.addItem(Items("Consumable", "Zero Potion", "vdsa", 654, .4565));
+    std::cout << test1.printItems();
     return 0;
-};
+}
