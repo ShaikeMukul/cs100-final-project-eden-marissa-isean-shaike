@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    Actions action("light attack", "POW! you performed a light attack!", 0.0, 15.0);
+    Actions action("light attack", "POW! you performed a light attack!", -15.0, 15.0);
 
     cout << "Action title: " << action.getTitle() << endl;
     cout << "Action description: " << action.getActionDescription() << endl;
