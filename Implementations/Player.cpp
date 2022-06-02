@@ -37,4 +37,10 @@ bool Player::levelUp(){
     setHealth(level);
     setDamage(level);
 }
+double getHealth(){
+    return health;
+}
 
+double getDamage(){
+    return damage;
+}
