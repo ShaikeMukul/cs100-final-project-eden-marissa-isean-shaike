@@ -1,5 +1,12 @@
-#include "Headers/Items.h"
+#include "Headers/Actions.h"
+#include "Headers/BossMob.h"
+#include "Headers/Entities.h"
 #include "Headers/Inventory.h"
+#include "Headers/Items.h"
+#include "Headers/Player.h"
+#include "Headers/Dungeon.h"
+#include "Headers/RegularMob.h"
+
 #include <iostream>
 int main(){
     Inventory test1;

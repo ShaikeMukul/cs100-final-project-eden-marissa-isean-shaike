@@ -13,7 +13,6 @@ class Dungeon : public Player, public BossMob, public RegularMob{
             Entities* currEnemy;
 
             Dungeon();
-            ~Dungeon();
             std::string getCurrEntities();
             void attack(Entities*);
             Entities* getDeath();

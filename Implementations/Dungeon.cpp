@@ -5,19 +5,16 @@ Dungeon::Dungeon(){
     currPlayer = nullptr;
     currEnemy = nullptr;
 }
-Dungeon::~Dungeon(){
-    delete currPlayer;
-    delete currEnemy;
-}
 
 std::string Dungeon::getCurrEntities() {
     std::ostringstream output;
     output << "Player Name: " << currPlayer->getName() << std::endl;
     output << "Enemy: " << currEnemy->getName() << std::endl;
+    return output.str();
 }
 
 void Dungeon::attack(Entities* ){
-    
+
 }
 
 Entities* Dungeon::getDeath() {
