@@ -4,8 +4,9 @@
 
 #include <iostream>
 #include <vector>
+#include "Entities.h"
 
-class Player{
+class Player : public Entities{
 protected:
 	std::vector<Actions> potentActions;
         std::string name;

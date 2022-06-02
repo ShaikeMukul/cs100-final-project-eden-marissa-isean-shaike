@@ -2,6 +2,16 @@
 #define ENTITIES_H
 #include <string>
 
+//Stub implementation
+class Actions{
+    public:
+        int healthEffect;
+        int damageEffect;
+        std::string actionDescrip;
+        Actions() : healthEffect(-1), damageEffect(-2), actionDescrip("No Desc") {}
+};
+//END OF STUB
+
 class Entities{
     protected:
         double health;
