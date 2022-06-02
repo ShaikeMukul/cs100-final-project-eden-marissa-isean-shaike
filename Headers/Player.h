@@ -19,6 +19,8 @@ protected:
         std::string getName();
         void changeHealth(double);
         void changeDamage(double);
+        double getHealth();
+        double getDamage();
 };
 
 
