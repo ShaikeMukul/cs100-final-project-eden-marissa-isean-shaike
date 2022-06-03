@@ -3,5 +3,6 @@ CMakeCache.txt
 Makefile
 lib/
 CMakeFiles/
+mains
 test
 .vscode
