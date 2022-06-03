@@ -32,16 +32,17 @@ We decided to use the strategy design pattern in order to essentially vary the t
 
  ## Installation/Usage
 To install and run our program follow these simple steps below
-1. Go into your command prompt and type `git clone --recursive https://github.com/cs100/final-project-eden-marissa-isean-shaike.git"`.
-2. Type `cd final-project-eden-marissa-isean-shaike`.
-3. Now to compile it type `cmake .` or if on hammer `cmake3 .`.
-4. And type `make`.
-5. Now you can run the program by typing `./mains`. 
+1. Go into your command prompt and type "git clone --recursive https://github.com/cs100/final-project-eden-marissa-isean-shaike.git".
+2. Type "cd final-project-eden-marissa-isean-shaike".
+3. Now to compile it type "cmake .".
+
+4. And type "make".
+5. Now you can run the program by typing "./mains".
  ## Testing
- Our project has been tested by over 50 units tests, which are all working and have fully tested our code, as shown as the green check mark near the top of the screen. We made sure to test after every change. To check the tests you simply run `./test` after compiling with cmake.
+ Our project has been tested by over 50 units tests, which are all working and have fully tested our code, as shown as the green check mark near the top of the screen.
  
 
- <img width="480" alt="unit test" src="https://user-images.githubusercontent.com/10952398/171913687-57a42e8f-8755-4a6d-a1a9-99ea730689bd.PNG">
+ <img width="480" alt="" src="https://user-images.githubusercontent.com/10952398/171913687-57a42e8f-8755-4a6d-a1a9-99ea730689bd.PNG">
  
- We also made sure to check the valgrind report (depicted below) by running `valgrind --leak-check=full --track-origins=yes ./test`.
-  <img width="520" alt="valgrind" src="https://user-images.githubusercontent.com/102642562/171912776-2af3ddc2-8acc-4f6c-9098-1c7c985a0ee9.png">
+ We made sure to test after every change. To check the tests you simply run `./test` after compiling with cmake. We also made sure to check the valgrind report (depicted below) by running `valgrind --leak-check=full --track-origins=yes ./test`.
+ ![valgrind](https://user-images.githubusercontent.com/102642562/171912776-2af3ddc2-8acc-4f6c-9098-1c7c985a0ee9.png)
