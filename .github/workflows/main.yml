@@ -25,6 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
      
+      - name: submodule
+        run: git submodule add https://github.com/google/googletest.git
+        
       - name: update
         run: git submodule update --init --recursive
              
