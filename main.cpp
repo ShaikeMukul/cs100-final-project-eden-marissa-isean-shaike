@@ -8,15 +8,83 @@
 #include "Headers/RegularMob.h"
 
 #include <iostream>
+using namespace std;
 int main(){
-    Inventory test1;
-    test1.addItem(Items("Debuff", "Health Potion", "Heals", 25.32, 0));
-    test1.addItem(Items("Consumable", "Damage Potion", "Damage", -123, 213));
-    test1.addItem(Items("Debuff", "Potion Potion", "Potion", 0, 0));
-    test1.addItem(Items("Consumable", "Pop Potion", "Potion", 123.12, 0));
-    test1.addItem(Items("Consumable", "Lol Potion", "asdsad", 546.45, 123));
-    test1.addItem(Items("Buff", "No Potion", "11323", 12, -123.123));
-    test1.addItem(Items("Consumable", "Zero Potion", "vdsa", 654, .4565));
-    std::cout << test1.printItems();
+    string inputName;
+    string inputDesc;
+    double inputDamage;
+    double inputHealth;
+    
+    if(/*Chass*/){
+        inputDesc = "CHASS : A mighty warrior with high health but with low damage.";
+        inputDamage = 15;
+        inputHealth = 130;
+    }
+    else if(/*Bourns*/){
+        inputDesc = "Bourns : A stealth mercinary with high damage and medium health.";
+        inputDamage = 25;
+        inputHealth = 100;
+    }
+    else{//CNAS
+        inputDesc = "CNAS : A alright warrior with medium damage and medium health";
+        inputDamage = 20;
+        inputHealth = 100;
+    }
+    
+    Player* userPlayer = new Player(inputName, inputDesc, inputHealth, inputDamage);
+	
+    int numLevels = 5; 
+    
+    for(int levelCounter = 5; levelCounter >0 ; ++levelCounter){
+
+        //levelup
+    }
+    
+    // //determine if initial interaction with enemy, and if special item has already been used or not
+	// //for (users health > 0)
+	// //  if(users initial = 0)
+	// //	then(initial interaction menu)
+	// //  else
+	// //  	go to regular interaction menu w/special item
+
+	// //initial interaction
+	// UserOutput output;
+    // output.printInitialMenu();
+
+    // UserInput initial;
+    // string initialOption;
+    // cout << " > ";
+    // getline(cin, initialOption);
+
+    // initial.setInput(initialOption);
+    // initial.useItem(initialOption);
+    // cout << endl;
+
+	// //regular interaction w/special item available
+	// UserOutput regWSpecItem;
+    // regWSpecItem.printRegWSpecItem();
+
+    // UserInput wSpecItem;
+    // string specItemOption;
+    // cout << " > ";
+    // getline(cin, specItemOption);
+
+    // wSpecItem.setInput(specItemOption);
+    // wSpecItem.useItem(specItemOption);
+    // cout << endl;
+
+	// //regular interaction w/out special item available
+	// UserOutput regNoSpecItem;
+    // regNoSpecItem.printRegNoSpecItem();
+
+    // UserInput noSpecItem;
+    // string noSpecItemOption;
+    // cout << " > ";
+    // getline(cin, noSpecItemOption);
+
+    // noSpecItem.setInput(noSpecItemOption);
+    // noSpecItem.useItem(noSpecItemOption);
+    // cout << endl;
+
     return 0;
 }

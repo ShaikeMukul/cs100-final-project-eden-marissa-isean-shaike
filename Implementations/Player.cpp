@@ -64,7 +64,7 @@ void Player::setHealth(int level){
     else if (level > 5) usedLevel = 5;
     else usedLevel = level;
 
-    health = (static_cast<double>(usedLevel)/5)*80 + 80;
+    health = (static_cast<double>(usedLevel)/5)*80 + 100;
 
 }
 
