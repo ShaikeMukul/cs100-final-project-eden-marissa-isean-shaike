@@ -69,6 +69,7 @@ void Player::setDamage(int level){
 }
 
 void Player::levelUp(){
+    std::cout << " \n\n You have leveled up !!! \n\n ";
     ++level;
     setHealth(level);
     setDamage(level);

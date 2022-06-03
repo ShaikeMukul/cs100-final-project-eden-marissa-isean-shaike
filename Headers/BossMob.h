@@ -11,7 +11,6 @@ class BossMob : public Entities{
         Actions getAction(int);
         virtual void changeHealth(double); // decrease health by amount passed in
         virtual void changeDamage(double); // decrease damage by amount passed in
-    protected:
         Actions currActions[10];
         void setActions(Actions inputActions[]);
         virtual void setHealth(int);
