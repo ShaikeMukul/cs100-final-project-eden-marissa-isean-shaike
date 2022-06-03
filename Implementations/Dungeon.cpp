@@ -13,8 +13,17 @@ std::string Dungeon::getCurrEntities() {
     return output.str();
 }
 
-void Dungeon::attack(Entities* ){
-
+void Dungeon::attack(Entities* attackedEntity){
+    Entities* attackEntity = nullptr;
+    if(attackedEntity == currEnemy){
+        attackEntity = currPlayer;
+    }
+    else{
+        attackEntity = currEnemy;
+    }
+    double damageDealth = attackedEntity->getDamage();
+    attackedEntity->changeHealth(damageDealth);
+    std::cout << attackEntity->getName() << " swiftly attacked " << attackedEntity->getName() << " for " << attackedEntity->getDamage() << ".\n"; 
 }
 
 Entities* Dungeon::getDeath() {

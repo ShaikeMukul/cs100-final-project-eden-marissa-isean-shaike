@@ -18,6 +18,8 @@ class Entities{
         virtual std::string getDescription(){return description;}
         virtual std::string getName() = 0;
         virtual std::string getTag() = 0;
+        virtual void changeHealth(double) = 0;
+        virtual void changeDamage(double) = 0;
 };
 
 #endif

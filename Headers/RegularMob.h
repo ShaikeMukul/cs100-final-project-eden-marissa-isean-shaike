@@ -11,8 +11,8 @@ class RegularMob : public Entities{
         virtual std::string getTag(){return "RegularMob";}
         virtual std::string getName(){ return name;}
     protected:
-        void changeHealth(double);
-        void changeDamage(double);
+        virtual void changeHealth(double);
+        virtual void changeDamage(double);
         virtual void setHealth(int);
         virtual void setDamage(int);
 };

@@ -18,8 +18,8 @@ class Player : public Entities{
         virtual std::string getTag(){ return "Player";}
         virtual std::string setName(std::string name);
         virtual std::string getName();
-        void changeHealth(double);
-        void changeDamage(double);
+        virtual void changeHealth(double);
+        virtual void changeDamage(double);
         int getLevel(){return level;}
         virtual void setHealth(int);
         virtual void setDamage(int);
