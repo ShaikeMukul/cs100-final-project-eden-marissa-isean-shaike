@@ -6,6 +6,7 @@
 #include "Headers/Player.h"
 #include "Headers/Dungeon.h"
 #include "Headers/RegularMob.h"
+#include <random>
 
 #include <iostream>
 using namespace std;
@@ -14,15 +15,11 @@ int main(){
     string inputDesc;
     double inputDamage;
     double inputHealth;
-    Items potentialItems[10] = {Items("Consumable", "Health Potion", "Heals the player by 10 points.", 10,0), 
-    Items("Consumable", "Health Potion", "Heals the player by 5 points.", 5,0),
-    Items("Consumable", "Damage Potion", "Damages the enemy by 10 points.", -10, 0),
-    Items("Consumable", "Damage Potion", "Damages the enemy by 5 points.", -5, 0),
-    Items("Buff", "Damage Increase Potion", "Increase player's damage by 5 points.", 0, 5),
-    Items("DeBuff", "Damage Decrease Potion", "Increase player's damage by 10 points.", 0, 10),
-    Items("DeBuff", "Damage Decrease Potion", "Y
-    }
-    
+
+    //intro
+    //get name and set
+    //choose class
+
     if(/*Chass*/){
         inputDesc = "CHASS : A mighty warrior with high health but with low damage.";
         inputDamage = 15;
@@ -42,11 +39,25 @@ int main(){
     Player* userPlayer = new Player(inputName, inputDesc, inputHealth, inputDamage);
 	
     int numLevels = 5; 
-    
-    for(int levelCounter = 5; levelCounter > 5 ; ++levelCounter){
+    int currMobLevel;
 
-        //levelup
+    for(int levelCounter = 5; levelCounter > 5 ; ++levelCounter){
+        currMobLevel = rand() % 5 + 1;
+        while(/*get getDeath() != nullptr*/){
+            //print menu
+            //player moves
+            //enemy moves
+        }
+        // if(getDeath() == userPlayer)
+            // levelCounter = 5;
+            output death messages
+        // ifgetdeath == enemy
+        if(levelCounter%5==0){
+            //level up the player
+        }
     }
+
+
     
     // //determine if initial interaction with enemy, and if special item has already been used or not
 	// //for (users health > 0)

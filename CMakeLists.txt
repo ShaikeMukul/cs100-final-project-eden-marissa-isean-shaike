@@ -4,17 +4,17 @@ SET(CMAKE_CXX_STANDARD 11)
 
 ADD_SUBDIRECTORY(googletest)
 
-ADD_EXECUTABLE(mains
-	Implementations/Actions.cpp
-	Implementations/BossMob.cpp
-	Implementations/Dungeon.cpp
-	Implementations/Entities.cpp
-	Implementations/Inventory.cpp
-	Implementations/Items.cpp
-	Implementations/Player.cpp
-	Implementations/RegularMob.cpp
-	main.cpp
-)
+# ADD_EXECUTABLE(mains
+# 	Implementations/Actions.cpp
+# 	Implementations/BossMob.cpp
+# 	Implementations/Dungeon.cpp
+# 	Implementations/Entities.cpp
+# 	Implementations/Inventory.cpp
+# 	Implementations/Items.cpp
+# 	Implementations/Player.cpp
+# 	Implementations/RegularMob.cpp
+# 	main.cpp
+# )
 
 ADD_EXECUTABLE(test
 	Implementations/Actions.cpp
