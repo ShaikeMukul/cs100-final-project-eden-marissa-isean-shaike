@@ -2,22 +2,26 @@
 #define DUNGEON_H
 #include <string>
 #include <sstream>
+#include <iostream>
 #include "Player.h"
 #include "BossMob.h"
 #include "RegularMob.h"
 
+
 class Dungeon : public Player, public BossMob, public RegularMob{
-        protected:
+        public:
             int currLevel;
             Player* currPlayer;
-            Entities* currEnemy;
-
+            BossMob* currBEnemy;
+            RegularMob* currREnemy;
+            BossMob* boss;
+    
             Dungeon();
             ~Dungeon();
+            Dungeon(Player* currP, BossMob* currB, RegularMob* currR) : currPlayer(currP), currBEnemy(currB), currREnemy(currR){}
             std::string getCurrEntities();
             void attack(Entities*);
             Entities* getDeath();
-            void loadEnemy();
             int getCurrLevel();
             void nextFloor();
 };

@@ -13,6 +13,13 @@ Items Inventory::getItem(std::string itemName){
     return Items();
 }
 
+Items Inventory::getItem(int index){
+    if(index < itemList.size()){
+        return itemList.at(index);
+    }
+    return itemList.at(0);
+}
+
 void Inventory::removeItem(std::string itemName){
     int count = 0;
     for(Items item : itemList){
@@ -40,7 +47,7 @@ std::string Inventory::printItems(){
         }
     }
     output << "\n";
-    counter = 1;
+    // counter = 1;
     output << "Debuffs\n";
     for(Items item : itemList){
         if(item.getTag() == "Debuff"){
@@ -52,7 +59,7 @@ std::string Inventory::printItems(){
     }
 
     output << "\n";
-    counter = 1;
+    // counter = 1;
     output << "Buffs\n";
     for(Items item : itemList){
         if(item.getTag() == "Buff"){
@@ -62,6 +69,19 @@ std::string Inventory::printItems(){
             ++counter;
         }
     }
+    output << "\n";
+
+    output << "None\n";
+    for(Items item : itemList){
+        if(item.getTag() == "None"){
+            output << '\t';
+            output << counter << ". ";
+            output << item.getItemName() << " : " << item.getItemDescription() << "\n";
+            ++counter;
+        }
+    }
+    
+    // output << itemList.size() << "\n";
     output << "\n";
     output << "----------------------------------------\n";
     return output.str();

@@ -20,7 +20,7 @@ BossMob::BossMob(){
     description = "NULL";
     damage = -1;
     health = -1;
-    Actions inputActions[10] = {Actions("Error", "Error",-1.2,-2.3),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2)};
+    Actions inputActions[10] = {Actions("Error", "Error",-1.2,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2),Actions("Error", "Error",-1,-2)};
     setActions(inputActions);
 }
 

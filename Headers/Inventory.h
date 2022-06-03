@@ -15,6 +15,7 @@ class Inventory{
         std::string printItems();
         int getSize() { return (itemList.size());}
         Items getItem(std::string);
+        Items getItem(int);
 };
 
 #endif
