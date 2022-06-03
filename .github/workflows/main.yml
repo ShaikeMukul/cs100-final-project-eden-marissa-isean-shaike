@@ -27,9 +27,7 @@ jobs:
      
       - name: submodule
         run: git submodule add https://github.com/google/googletest.git
-        
-      - name: update
-        run: git submodule update --init --recursive
+             git submodule update --init --recursive
              
       - name: Run Cmake
         run: cmake .
