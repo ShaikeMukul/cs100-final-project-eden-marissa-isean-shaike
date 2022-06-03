@@ -24,20 +24,17 @@ There is a overlapping Entities super class that helps catgories the Players and
 We decided to use the strategy design pattern in order to essentially vary the types of Entities attacks and damage calculations. In the beginning we decided the subclasses of Entites; including Player, BossMob, and RegularMob; need to have slightly different implementations of setDamage() and setHealth() inorder to have a varying level of difficulty and uniqueness WHILE also having a common interfact for those Entities. In order to solve this problem we employed the strategy pattern to specifically chose which setHealth and setDamage algorithm to use during runtime.
 
  
+ > ## Final deliverable
+ > All group members will give a demo to the TA/reader during lab time. The TA/reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
+ > Before the demo, you should do the following:
+ > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
+ > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
+ > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
+ 
  ## Screenshots
- <img width="1394" alt="Screen Shot 2022-06-03 at 5 37 53 AM" src="https://user-images.githubusercontent.com/44033533/171855196-fa2fae8e-0b28-4c4a-a55a-d098d4994db0.png">
-<img width="1052" alt="Screen Shot 2022-06-03 at 5 38 22 AM" src="https://user-images.githubusercontent.com/44033533/171855272-4bfb97d9-aa89-4499-8614-1d82118d4ab7.png">
-<img width="1052" alt="Screen Shot 2022-06-03 at 5 38 39 AM" src="https://user-images.githubusercontent.com/44033533/171855331-1d1fef9c-3687-4358-9609-3fa7008cc4fe.png">
-<img width="202" alt="Screen Shot 2022-06-03 at 5 39 05 AM" src="https://user-images.githubusercontent.com/44033533/171855399-0b5f5aaf-ccfc-4d6a-b3af-7689fd19825b.png">
-
+ > Screenshots of the input/output after running your application
  ## Installation/Usage
-To install and run our program follow these simple steps below
-1. Go into your command prompt and type "git clone --recursive https://github.com/cs100/final-project-eden-marissa-isean-shaike.git".
-2. Type "cd final-project-eden-marissa-isean-shaike".
-3. Now to compile it type "cmake .".
-
-4. And type "make".
-5. Now you can run the program by typing "./mains".
+ > Instructions on installing and running your application
  ## Testing
- Our project has been tested by over 50 units tests, which are all working and have fully tested our code, as shown as the green check mark near the top of the screen.
+ > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
