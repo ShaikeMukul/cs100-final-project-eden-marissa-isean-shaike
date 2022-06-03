@@ -9,11 +9,10 @@ class BossMob : public Entities{
         virtual std::string getName() {return "-+- BOSS -+-    " + name;}
         virtual std::string getTag(){return "Boss";}
         Actions getAction(int);
-    protected:
-        Actions currActions[10];
-
         virtual void changeHealth(double); // decrease health by amount passed in
         virtual void changeDamage(double); // decrease damage by amount passed in
+    protected:
+        Actions currActions[10];
         void setActions(Actions inputActions[]);
         virtual void setHealth(int);
         virtual void setDamage(int);

@@ -13,6 +13,13 @@ Items Inventory::getItem(std::string itemName){
     return Items();
 }
 
+Items Inventory::getItem(int index){
+    if(index < itemList.size()){
+        return itemList.at(index);
+    }
+    return itemList.at(0);
+}
+
 void Inventory::removeItem(std::string itemName){
     int count = 0;
     for(Items item : itemList){

@@ -12,14 +12,14 @@ class Dungeon : public Player, public BossMob, public RegularMob{
         protected:
             int currLevel;
             Player* currPlayer;
-            BossMob* bossMob;
-            RegularMob* regularMob;
+            BossMob* currBEnemy;
+            RegularMob* currREnemy;
 
             Dungeon();
             std::string getCurrEntities();
             void attack(Entities*);
             Entities* getDeath();
-            void loadEnemy();
+            void loadEnemy(RegularMob* , BossMob* );
             int getCurrLevel();
             void nextFloor();
 };

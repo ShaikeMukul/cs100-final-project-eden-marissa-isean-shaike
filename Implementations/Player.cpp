@@ -16,10 +16,12 @@ Player::Player(std::string nameInput, std::string descriptionInput, double healt
     damage=damageInput;
     health=healthInput;
     level=0;
+    currInventory = Inventory();
 }
 
 std::string Player::setName(std::string name){
-    name = name;
+    this->name = name;
+    return name;
 }
 
 std::string Player::getName() {
@@ -46,18 +48,6 @@ void Player::changeDamage(double lessenDamage){
     }
 }
 
-void Player::levelUp(){
-    ++level;
-    setHealth(level);
-    setDamage(level);
-}
-
-void Player::setActions(Actions inputActions[10]){
-    for(unsigned i = 0; i < 10; ++i){
-        currActions[i] = inputActions[i];
-    }
-}
-
 void Player::setHealth(int level){
     int usedLevel;
     if(level < 1) usedLevel = 1;
@@ -76,4 +66,16 @@ void Player::setDamage(int level){
 
     damage = (static_cast<double>(usedLevel)/5)*50 + 20;
 
+}
+
+void Player::levelUp(){
+    ++level;
+    setHealth(level);
+    setDamage(level);
+}
+
+void Player::setActions(Actions inputActions[10]){
+    for(unsigned i = 0; i < 10; ++i){
+        currActions[i] = inputActions[i];
+    }
 }
