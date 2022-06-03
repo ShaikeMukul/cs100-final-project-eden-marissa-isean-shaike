@@ -14,6 +14,14 @@ int main(){
     string inputDesc;
     double inputDamage;
     double inputHealth;
+    Items potentialItems[10] = {Items("Consumable", "Health Potion", "Heals the player by 10 points.", 10,0), 
+    Items("Consumable", "Health Potion", "Heals the player by 5 points.", 5,0),
+    Items("Consumable", "Damage Potion", "Damages the enemy by 10 points.", -10, 0),
+    Items("Consumable", "Damage Potion", "Damages the enemy by 5 points.", -5, 0),
+    Items("Buff", "Damage Increase Potion", "Increase player's damage by 5 points.", 0, 5),
+    Items("DeBuff", "Damage Decrease Potion", "Increase player's damage by 10 points.", 0, 10),
+    Items("DeBuff", "Damage Decrease Potion", "Y
+    }
     
     if(/*Chass*/){
         inputDesc = "CHASS : A mighty warrior with high health but with low damage.";
@@ -35,7 +43,7 @@ int main(){
 	
     int numLevels = 5; 
     
-    for(int levelCounter = 5; levelCounter >0 ; ++levelCounter){
+    for(int levelCounter = 5; levelCounter > 5 ; ++levelCounter){
 
         //levelup
     }
