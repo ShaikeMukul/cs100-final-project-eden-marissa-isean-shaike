@@ -27,10 +27,7 @@ jobs:
      
       - name: update
         run: git submodule update --recursive
-      
-      - name: delete cache
-        run: rm CMakeCache.txt
-        
+             
       - name: Run Cmake
         run: cmake .
 
