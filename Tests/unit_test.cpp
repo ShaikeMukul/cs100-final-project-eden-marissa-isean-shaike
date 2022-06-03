@@ -6,6 +6,7 @@
 #include "itemTests.hpp"
 #include "playerTests.hpp"
 #include "regmob_test.hpp"
+#include "actions_tests.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

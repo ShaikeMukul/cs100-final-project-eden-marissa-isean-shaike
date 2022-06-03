@@ -1,4 +1,5 @@
 #include "../Headers/Actions.h"
+#include <cmath>
 
 using namespace std;
 
