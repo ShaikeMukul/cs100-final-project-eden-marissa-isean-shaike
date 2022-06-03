@@ -8,7 +8,6 @@
 
 class Player : public Entities{
     protected:
-	    Actions currActions[10];
         void setActions(Actions inputActions[]);
         int level;
         void levelUp();
@@ -23,6 +22,7 @@ class Player : public Entities{
         int getLevel(){return level;}
         virtual void setHealth(int);
         virtual void setDamage(int);
+	Actions currActions[10];
 };
 
 
