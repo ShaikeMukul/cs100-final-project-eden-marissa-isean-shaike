@@ -16,32 +16,40 @@ int main(){
     double inputDamage;
     double inputHealth;
 
+    Actions bossActions[10] = {Actions("Attack","Regular attack",0,0),Actions("Dodge","Mostly dodges an attackers damage",-10,0), Actions("Magic Sheild","Mostly dodges an attackers damage",-5,0)};
+    BossMob* boss = new BossMob("The Puppetmaster", "A powerful being with a lot of damage and health...", 120, 30, bossActions);
+    
+    RegularMob* mob1 = new RegularMob("Ancient Skeleton", "A bony enemy!", 60, 6);
+    RegularMob* mob2 = new RegularMob("Boulders", "The surrounding rubble has come to life to fight!", 60, 10);
+    RegularMob* mob3 = new RegularMob("Deranged Orange", "The science experiment that went to far", 80, 13);
+    RegularMob* mob4 = new RegularMob("The Undead GuardDog", "Cute but packs a powerful bite!", 30, 20);
+    
+
     //intro
     //get name and set
     //choose class
 
     if(/*Chass*/){
         inputDesc = "CHASS : A mighty warrior with high health but with low damage.";
-        inputDamage = 15;
+        inputDamage = 13;
         inputHealth = 130;
     }
     else if(/*Bourns*/){
         inputDesc = "Bourns : A stealth mercinary with high damage and medium health.";
-        inputDamage = 25;
+        inputDamage = 24;
         inputHealth = 100;
     }
     else{//CNAS
         inputDesc = "CNAS : A alright warrior with medium damage and medium health";
-        inputDamage = 20;
+        inputDamage = 21;
         inputHealth = 100;
     }
     
     Player* userPlayer = new Player(inputName, inputDesc, inputHealth, inputDamage);
 	
-    int numLevels = 5; 
     int currMobLevel;
 
-    for(int levelCounter = 5; levelCounter > 5 ; ++levelCounter){
+    for(int levelCounter = 0; levelCounter < 4 ; ++levelCounter){
         currMobLevel = rand() % 5 + 1;
         while(/*get getDeath() != nullptr*/){
             //print menu

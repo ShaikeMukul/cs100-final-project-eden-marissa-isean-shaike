@@ -12,7 +12,8 @@ class Dungeon : public Player, public BossMob, public RegularMob{
         protected:
             int currLevel;
             Player* currPlayer;
-            Entities* currEnemy;
+            BossMob* bossMob;
+            RegularMob* regularMob;
 
             Dungeon();
             std::string getCurrEntities();
