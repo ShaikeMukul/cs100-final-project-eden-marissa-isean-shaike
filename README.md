@@ -44,6 +44,4 @@ To install and run our program follow these simple steps below
  <img width="480" alt="unit test" src="https://user-images.githubusercontent.com/10952398/171913687-57a42e8f-8755-4a6d-a1a9-99ea730689bd.PNG">
  
  We also made sure to check the valgrind report (depicted below) by running `valgrind --leak-check=full --track-origins=yes ./test`.
- 
- 
-  <img width="550" alt="valgrind" src="https://user-images.githubusercontent.com/102642562/171912776-2af3ddc2-8acc-4f6c-9098-1c7c985a0ee9.png">
+  <img width="520" alt="valgrind" src="https://user-images.githubusercontent.com/102642562/171912776-2af3ddc2-8acc-4f6c-9098-1c7c985a0ee9.png">
