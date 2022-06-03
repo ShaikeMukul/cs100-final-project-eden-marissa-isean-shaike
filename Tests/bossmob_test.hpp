@@ -115,7 +115,7 @@ TEST(BossMob, getActionsOnce_and_ParmConstructor){
     Actions testAct[10] = {Actions("TestTitle", "TestDesc", 1, 2),Actions("TestTitle", "TestDesc", 13, 12)};
     TestOtherClass test("Orge", "Lives under bridges", 1000, 20, testAct);
 
-    EXPECT_EQ(test.getActionTest(5).getHealthOutput(), -1);
+    EXPECT_EQ(test.getActionTest(5).getHealthOutput(), -999.9);
 }
 
 TEST(BossMob, getActionsUnderBound_and_ParmConstructor){
